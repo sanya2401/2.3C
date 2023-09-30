@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <div v-html="rawHTML"></div>
+        <div :id="elementId">Dynamic ID Element</div>
+        <p>Sum: {{ calculateSum() }}</p>
+
+        <div>
+            <h2>Styling and Class Binding</h2>
+            <div :class="{ active: isActive, 'error-text': hasError }">Styled Div</div>
+            <div :style="{ color: textColor, fontSize: fontSize + 'px' }">Styled Text</div>
+        </div>
+
+        <div>
+            <h2>List Rendering</h2>
+            <ul>
+                <li v-for="(value, key) in user" :key="key">{{ key }}: {{ value }}</li>
+            </ul>
+            <ul>
+                <li v-for="n in 5" :key="n">Item {{ n }}</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>Event Handling</h2>
+            <button @click="handleClick">Click Me</button>
+        </div>
+
+        <div>
+            <h2>Form Input Bindings</h2>
+            <input type="text" v-model="textInput" placeholder="Enter text">
+        </div>
+
+        <div>
+            <h2>Computed Property</h2>
+            <p>Full Name: {{ fullName }}</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
